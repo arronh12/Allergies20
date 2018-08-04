@@ -13,6 +13,24 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+
+    <style name="LogoDesign">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">#c90906</item>
+    </style>
+
+    <style name="foodLabels">
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="inputBoxes">
+        <item name="android:background">#c90906</item>
+    </style>
+
+    <style name="background">
+        <item name="android:background">#c90906</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
