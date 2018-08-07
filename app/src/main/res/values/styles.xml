@@ -25,11 +25,10 @@
 
     <style name="inputBoxes">
         <item name="android:background">#c90906</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">32dp</item>i
     </style>
-
-    <style name="background">
-        <item name="android:background">#c90906</item>
-    </style>
+    s
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

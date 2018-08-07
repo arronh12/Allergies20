@@ -6,7 +6,20 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Add"
-    tools:showIn="@layout/activity_add" >
+    tools:showIn="@layout/activity_add">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
     <TextView
         android:id="@+id/addLogoLabel"
@@ -32,14 +45,82 @@
         tools:text="Food Name:" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/foodNameLabel"
         style="@style/inputBoxes"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
         android:layout_marginEnd="28dp"
         android:layout_marginTop="104dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/foodTypeLabel"
+        style="@style/foodLabels"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addLogoLabel"
+        tools:text="Food Type:" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        style="@style/inputBoxes"
+        android:layout_marginEnd="28dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodNameLabel" />
+
+    <TextView
+        android:id="@+id/AllergysTypeLabel"
+        style="@style/foodLabels"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodTypeLabel"
+        tools:text="Allergy Type" />
+
+    <LinearLayout
+        android:layout_width="339dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/scrollView2"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toEndOf="@+id/scrollView2"
+        app:layout_constraintTop_toBottomOf="@+id/AllergysTypeLabel">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gluten" />
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Penuts" />
+
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dairy" />
+        </RadioGroup>
+    </LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>
