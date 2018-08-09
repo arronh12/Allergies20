@@ -8,19 +8,6 @@
     tools:context=".Add"
     tools:showIn="@layout/activity_add">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="0dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
-
     <TextView
         android:id="@+id/addLogoLabel"
         style="@style/LogoDesign"
@@ -28,7 +15,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="TextView"
+        android:text="Add Food"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/add_logo_text" />
@@ -85,13 +72,15 @@
         tools:text="Allergy Type" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="339dp"
         android:layout_height="63dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toStartOf="@+id/scrollView2"
-        app:layout_constraintHorizontal_bias="0.499"
-        app:layout_constraintStart_toEndOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AllergysTypeLabel">
 
         <RadioGroup
@@ -100,27 +89,66 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/GradioB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Gluten" />
 
             <RadioButton
-                android:id="@+id/radioButton5"
+                android:id="@+id/PradioB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Penuts" />
 
             <RadioButton
-                android:id="@+id/radioButton6"
+                android:id="@+id/DradioB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Dairy" />
         </RadioGroup>
     </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/AddButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="8dp"
+        android:text="Add"
+        android:theme="@style/AppTheme.Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="84dp"
+        android:text="Clear"
+        android:theme="@style/AppTheme.Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
