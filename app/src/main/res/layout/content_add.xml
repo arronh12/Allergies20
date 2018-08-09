@@ -1,154 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Add"
+    tools:context=".Activities.Add"
     tools:showIn="@layout/activity_add">
 
-    <TextView
-        android:id="@+id/addLogoLabel"
-        style="@style/LogoDesign"
-        android:layout_width="137dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="Add Food"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/add_logo_text" />
 
-    <TextView
-        android:id="@+id/addFoodLabel"
-        style="@style/foodLabels"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addLogoLabel"
-        tools:text="Food Name:" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/foodNameLabel"
-        style="@style/inputBoxes"
-        android:layout_marginEnd="28dp"
-        android:layout_marginTop="104dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/addLogoLabel"
+            style="@style/LogoDesign"
+            android:layout_width="137dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="Add Food"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/add_logo_text" />
 
-    <TextView
-        android:id="@+id/foodTypeLabel"
-        style="@style/foodLabels"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addLogoLabel"
-        tools:text="Food Type:" />
+        <TextView
+            android:id="@+id/addFoodLabel"
+            style="@style/foodLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addLogoLabel"
+            tools:text="Food Name:" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        style="@style/inputBoxes"
-        android:layout_marginEnd="28dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodNameLabel" />
+        <EditText
+            android:id="@+id/foodNameText"
+            style="@style/inputBoxes"
+            android:layout_marginEnd="28dp"
+            android:layout_marginTop="104dp"
+            android:ems="10"
+            android:hint="Food Name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/AllergysTypeLabel"
-        style="@style/foodLabels"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="56dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodTypeLabel"
-        tools:text="Allergy Type" />
+        <TextView
+            android:id="@+id/foodTypeLabel"
+            style="@style/foodLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addLogoLabel"
+            tools:text="Food Type:" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="339dp"
-        android:layout_height="63dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AllergysTypeLabel">
+        <Spinner
+            android:id="@+id/foodSpinner"
+            style="@style/inputBoxes"
+            android:layout_marginEnd="28dp"
+            android:layout_marginTop="20dp"
+            android:entries="@array/foods"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/foodNameText" />
 
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <TextView
+            android:id="@+id/AllergysTypeLabel"
+            style="@style/foodLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="44dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.201"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/foodTypeLabel"
+            tools:text="Allergy Type" />
 
-            <RadioButton
-                android:id="@+id/GradioB"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="339dp"
+            android:layout_height="63dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AllergysTypeLabel">
+
+            <RadioGroup
+                android:id="@+id/allergiesRGroup"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:background="@color/text_shadow"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/GradioB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Gluten"
+                    android:textColor="@color/red_text" />
+
+                <RadioButton
+                    android:id="@+id/DradioB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dairy"
+                    android:textColor="@color/red_text"
+                    tools:layout_editor_absoluteX="269dp"
+                    tools:layout_editor_absoluteY="286dp" />
+
+                <RadioButton
+                    android:id="@+id/PradioB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Penuts"
+                    android:textColor="@color/red_text" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <GridLayout
+            android:id="@+id/multiBox"
+            android:layout_width="360dp"
+            android:layout_height="111dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"></GridLayout>
+
+
+        <TextView
+            android:id="@+id/infoLabel"
+            style="@style/foodLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="52dp"
+            android:text="Information"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/riskLabel"
+            tools:text="Information" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="242dp"
+            android:layout_height="62dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/infoText">
+
+            <Button
+                android:id="@+id/ClearButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Gluten" />
+                android:onClick="clearClicked"
+                android:text="Clear"
+                android:theme="@style/AppTheme.Button"
+                tools:layout_editor_absoluteX="212dp"
+                tools:layout_editor_absoluteY="447dp" />
 
-            <RadioButton
-                android:id="@+id/PradioB"
+            <Button
+                android:id="@+id/AddButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="84dp"
                 android:layout_weight="1"
-                android:text="Penuts" />
+                android:onClick="addClicked"
+                android:text="Add"
+                android:theme="@style/AppTheme.Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
 
-            <RadioButton
-                android:id="@+id/DradioB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Dairy" />
-        </RadioGroup>
-    </LinearLayout>
+        <TextView
+            android:id="@+id/riskLabel"
+            style="@style/foodLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="140dp"
+            android:text="Risk Level"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        <NumberPicker
+            android:id="@+id/riskPicker"
+            style="@style/inputBoxes"
+            android:layout_width="43dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="240dp"
+            android:layout_marginStart="8dp"
+            android:soundEffectsEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/infoText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintStart_toEndOf="@+id/riskLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/multiBox"
+            app:layout_constraintVertical_bias="0.19999999"></NumberPicker>
 
-    <Button
-        android:id="@+id/AddButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="8dp"
-        android:text="Add"
-        android:theme="@style/AppTheme.Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.0" />
+        <EditText
+            android:id="@+id/infoText"
+            style="@style/inputBoxes"
+            android:layout_width="374dp"
+            android:layout_height="75dp"
+            android:ems="10"
+            android:hint="Food Information"
+            android:inputType="textMultiLine"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/infoLabel" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="84dp"
-        android:text="Clear"
-        android:theme="@style/AppTheme.Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    </android.support.constraint.ConstraintLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

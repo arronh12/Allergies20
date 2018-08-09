@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="foods">
+        <item>Empty</item>
+        <item>Bread</item>
+        <item>Meat</item>
+        <item>Grains</item>
+        <item>nuts</item>
+        <item>Fruit</item>
+        <item>Vegetable</item>
+        <item>Beverages</item>
+        <item>Roots</item>
+    </array>
+
+</resources>

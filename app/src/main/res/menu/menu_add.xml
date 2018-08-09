@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ontext="com.example.arron.allergies20.Add">
+    tools:ontext="com.example.arron.allergies20.Activities.Add">
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
