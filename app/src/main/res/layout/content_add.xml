@@ -128,13 +128,15 @@
             </RadioGroup>
         </LinearLayout>
 
-        <GridLayout
+        <android.support.v7.widget.LinearLayoutCompat
             android:id="@+id/multiBox"
             android:layout_width="360dp"
             android:layout_height="111dp"
             android:layout_marginEnd="24dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"></GridLayout>
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        </android.support.v7.widget.LinearLayoutCompat>
 
 
         <TextView
@@ -213,7 +215,8 @@
             app:layout_constraintStart_toEndOf="@+id/riskLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/multiBox"
-            app:layout_constraintVertical_bias="0.19999999"></NumberPicker>
+            app:layout_constraintVertical_bias="0.19999999">
+        </NumberPicker>
 
         <EditText
             android:id="@+id/infoText"
@@ -225,6 +228,7 @@
             android:inputType="textMultiLine"
             android:selectAllOnFocus="true"
             android:singleLine="true"
+            android:textAlignment="textStart"
             android:textAppearance="@style/TextAppearance.AppCompat"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.486"

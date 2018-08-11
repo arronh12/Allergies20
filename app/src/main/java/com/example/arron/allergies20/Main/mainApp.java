@@ -1,14 +1,25 @@
 package com.example.arron.allergies20.Main;
 
 import com.example.arron.allergies20.Models.Allergies;
+import com.example.arron.allergies20.Models.Dairy;
+import com.example.arron.allergies20.Models.Gluten;
+import com.example.arron.allergies20.Models.Penuts;
 
 import java.util.ArrayList;
 
 public class mainApp {
     ArrayList<Allergies> foodsList = new ArrayList<>();
 
-    public void addToList(String nameIn, String typeIn, String allergyIn, String infoIn, int foodRiskPickerIn){
-        foodsList.add(new Allergies(nameIn, typeIn, allergyIn, infoIn, foodRiskPickerIn));
+    public void addToListGluten(String nameIn, String typeIn, String allergyIn, String infoIn, int foodRiskPickerIn,int glutenGramsIn, String problemFoodIn){
+        foodsList.add(new Gluten(nameIn, typeIn, allergyIn, infoIn, foodRiskPickerIn, glutenGramsIn,problemFoodIn));
+    }
+
+    public void addToListPeanuts(String nameIn, String typeIn, String allergyIn, String infoIn, int foodRiskPickerIn,int traceAmountIn){
+        foodsList.add(new Penuts(nameIn, typeIn, allergyIn, infoIn, foodRiskPickerIn, traceAmountIn));
+    }
+
+    public void addToListDairy(String nameIn, String typeIn, String allergyIn, String infoIn, int foodRiskPickerIn,int mlAmountIn){
+        foodsList.add(new Dairy(nameIn, typeIn, allergyIn, infoIn, foodRiskPickerIn, mlAmountIn));
     }
 
     public void print(){
