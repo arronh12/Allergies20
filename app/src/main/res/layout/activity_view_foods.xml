@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="385dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011">
+
+        <Button
+            android:id="@+id/AtoZButton"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="clearClicked"
+            android:text="A to Z"
+            android:theme="@style/AppTheme.Button"
+            tools:layout_editor_absoluteX="212dp"
+            tools:layout_editor_absoluteY="447dp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            style="@style/inputBoxes"
+            android:layout_width="65dp"
+            android:layout_height="37dp"
+            android:layout_weight="1"
+            android:entries="@array/allergies"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/ZtoA"
+            android:layout_width="27dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="clearClicked"
+            android:text="Z to A"
+            android:theme="@style/AppTheme.Button"
+            tools:layout_editor_absoluteX="212dp"
+            tools:layout_editor_absoluteY="447dp" />
+
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="511dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/viewFoodsList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

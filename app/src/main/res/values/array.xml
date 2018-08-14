@@ -13,4 +13,10 @@
         <item>Roots</item>
     </array>
 
+    <array name="allergies">
+        <item>Gluten</item>
+        <item>Dairy</item>
+        <item>Peanuts</item>
+    </array>
+
 </resources>

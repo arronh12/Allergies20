@@ -22,10 +22,13 @@ public class mainApp {
         foodsList.add(new Dairy(nameIn, typeIn, allergyIn, infoIn, foodRiskPickerIn, mlAmountIn));
     }
 
-    public void print(){
+    public ArrayList<String> returnFoodNames(){
 
+        ArrayList<String> ListFoods = new ArrayList<>();
        for(int i = 0; i < foodsList.size();i++){
-           System.out.println(foodsList.get(i).toString());
-       }
+
+           ListFoods.add(foodsList.get(i).getFoodName());
+           }
+           return ListFoods;
     }
 }

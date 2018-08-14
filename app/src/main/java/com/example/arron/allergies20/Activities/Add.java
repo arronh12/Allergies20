@@ -2,13 +2,16 @@ package com.example.arron.allergies20.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.support.v7.widget.Toolbar;
 import android.text.InputType;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.RadioGroup;
@@ -57,6 +60,9 @@ public class Add extends Base {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 
         mainAppObject = new mainApp();
 
@@ -185,18 +191,23 @@ public class Add extends Base {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_add, menu);
+        MenuInflater inflator = getMenuInflater();
+        inflator.inflate(R.menu.food_menu, menu);
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId())
+        {
+            case R.id.menu_add:
+                Toast.makeText(this, "add foods", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Add.this,Add.class));
+                break;
+            case R.id.menu_viewfoods:
+                startActivity(new Intent(Add.this,ViewFoods.class));
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -224,7 +235,6 @@ public class Add extends Base {
                     int traceAmountOut = Integer.parseInt(peanutsTrace.getText().toString().trim());
                     mainAppObject.addToListPeanuts(foodNameOut,foodTypeOut,allergiesTypeOut,infoOut,riskPickerOut,traceAmountOut);
             }
-            mainAppObject.print();
         }
 
     }

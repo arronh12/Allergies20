@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -21,8 +23,8 @@ import java.util.List;
 public class ViewFoods extends Base {
 
     ListView listView;
-    FoodsListAdapter<S> adapter;
     ArrayList<String> foods;
+    private ArrayAdapter<String> FoodsListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,46 +34,43 @@ public class ViewFoods extends Base {
         setSupportActionBar(toolbar);
 
         listView = (ListView) findViewById(R.id.viewFoodsList);
-        foods = new ArrayList<>();
+        ArrayList<String> foods = new ArrayList<String>();
 
         foods = mainAppObject.returnFoodNames();
 
-        adapter = new FoodsListAdapter<String>(this,android.R.layout.simple_list_item_1, foods);
-        listView.setAdapter(adapter);
+        FoodsListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,foods);
+        listView.setAdapter(FoodsListAdapter);
+
+        /*listView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        String food = String.valueOf(parent.getItemAtPosition(position));
+
+                        //pass(food);
+                    }
+                });*/
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflator = getMenuInflater();
-        inflator.inflate(R.menu.food_menu, menu);
-        return true;
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId())
-        {
-            case R.id.menu_add:
-                Toast.makeText(this, "add foods", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(ViewFoods.this,Add.class));
-                break;
-            case R.id.menu_viewfoods:
-                startActivity(new Intent(this,ViewFoods.class));
+        @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            MenuInflater inflator = getMenuInflater();
+            inflator.inflate(R.menu.food_menu, menu);
+            return true;
         }
-        return super.onOptionsItemSelected(item);
+
+
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
+            switch (item.getItemId())
+            {
+                case R.id.menu_add:
+                    Toast.makeText(this, "add foods", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(ViewFoods.this,Add.class));
+                    break;
+                case R.id.menu_viewfoods:
+                    startActivity(new Intent(ViewFoods.this,ViewFoods.class));
+            }
+            return super.onOptionsItemSelected(item);
+        }
     }
-}
-
-class FoodsListAdapter<S> extends ArrayAdapter<>{
-
-    private Context context;
-    private List<String> foods;
-
-    public FoodsListAdapter(@NonNull Context context, List<String> foods) {
-        super(context, resource);
-        this.foods = foods;
-    }
-
-
-}
