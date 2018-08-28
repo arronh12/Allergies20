@@ -6,12 +6,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.arron.allergies20.Data.DAOaccess;
 import com.example.arron.allergies20.Main.mainApp;
 import com.example.arron.allergies20.R;
 
 public class Base extends AppCompatActivity {
 
     public mainApp mainAppObject;
+    public static DAOaccess dbAccess;
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

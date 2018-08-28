@@ -1,5 +1,6 @@
 package com.example.arron.allergies20.Main;
 
+import com.example.arron.allergies20.Data.DAOaccess;
 import com.example.arron.allergies20.Models.Allergies;
 import com.example.arron.allergies20.Models.Dairy;
 import com.example.arron.allergies20.Models.Gluten;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 
 public class mainApp {
     ArrayList<Allergies> foodsList = new ArrayList<>();
+
 
     public void addToListGluten(String nameIn, String typeIn, String allergyIn, String infoIn, int foodRiskPickerIn,int glutenGramsIn, String problemFoodIn){
         foodsList.add(new Gluten(nameIn, typeIn, allergyIn, infoIn, foodRiskPickerIn, glutenGramsIn,problemFoodIn));

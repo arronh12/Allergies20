@@ -1,6 +1,6 @@
 package com.example.arron.allergies20.Models;
 
-public class Dairy extends Allergies {
+public class Dairy extends Allergies{
 
     public int ml;
 
