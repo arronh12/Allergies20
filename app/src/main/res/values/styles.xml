@@ -41,6 +41,11 @@
         <item name="android:layout_height">32dp</item>
     </style>
 
+    <style name="selectionBoxs">
+        <item name="android:textColor">#FFF</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
 
     <style name="AppTheme.Button">
         <item name="colorButtonNormal">#c90906</item>

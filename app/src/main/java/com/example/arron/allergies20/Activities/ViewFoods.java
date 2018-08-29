@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,10 +28,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static com.example.arron.allergies20.R.menu.food_menu;
+
 public class ViewFoods extends Base {
 
     ListView listView;
-    List<Allergies> foods;
     private FoodsViewAdapter fAdapter;
     SearchView search;
 
@@ -41,22 +43,42 @@ public class ViewFoods extends Base {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //search = (SearchView)findViewById(R.id.searchView);
+        search = (SearchView)findViewById(R.id.searchBox);
+        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                userInput(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                userInput(newText);
+                return false;
+            }
+        });
 
         foodDataBase db = Room.databaseBuilder(getApplicationContext(),foodDataBase.class ,"foods_db").allowMainThreadQueries().build();
         dbAccess = db.DBaccess();
         foods = dbAccess.getFoods();
 
         listView = (ListView)findViewById(R.id.viewFoodsList);
-
         fAdapter = new FoodsViewAdapter(this,foods);
         listView.setAdapter(fAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(ViewFoods.this, SelectedFood.class);
+                intent.putExtra("position", position);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflator = getMenuInflater();
-        inflator.inflate(R.menu.food_menu, menu);
+        getMenuInflater().inflate(food_menu, menu);
         return true;
     }
 
@@ -69,23 +91,28 @@ public class ViewFoods extends Base {
                 Toast.makeText(this, "add", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(ViewFoods.this,Add.class));
                 break;
-            case R.id.menu_viewfoods:
+            case R.id.menu_view_foods:
                 startActivity(new Intent(ViewFoods.this,ViewFoods.class));
         }
         return super.onOptionsItemSelected(item);
     }
 
+    public void startList(View v){
+        foods = dbAccess.getFoods();
+        listView = (ListView)findViewById(R.id.viewFoodsList);
+        fAdapter = new FoodsViewAdapter(this,foods);
+        listView.setAdapter(fAdapter);
+    }
 
 
-        public void dataTester(View v){
-        List<Allergies> foodsListData = dbAccess.getFoods();
-            try{
-                for(int i = 0; i < foodsListData.size(); i++) {
-                    System.out.println(foodsListData.toString());
+    public void userInput(String quiryIn){
+        quiryIn.trim().toLowerCase();
+        List list = dbAccess.userInput(quiryIn);
+        foods = list;
+        fAdapter = new FoodsViewAdapter(this,list);
+        listView.setAdapter(fAdapter);
+    }
 
-                }
-            } catch(SQLiteConstraintException e){
-                Toast.makeText(this,"Already exits",Toast.LENGTH_SHORT).show();
-            }
-        }
+
+
     }

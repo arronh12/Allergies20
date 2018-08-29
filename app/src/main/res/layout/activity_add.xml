@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/text_shadow"
-            android:visibility="visible" />
+            android:visibility="visible"
+            android:elevation="4dp"/>
 
     </android.support.design.widget.AppBarLayout>
 

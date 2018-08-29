@@ -5,4 +5,5 @@
 
     <string name="addfoods">Add Foods</string>
     <string name="view_foods">View Foods</string>
+    <string name="action_search">action search</string>
 </resources>

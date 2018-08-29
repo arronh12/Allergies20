@@ -20,4 +20,7 @@ public interface DAOaccess {
     @Query("SELECT * FROM food_table")
     List<Allergies> getFoods();
 
+    @Query("SELECT * FROM food_table WHERE food_name like :UserGuess")
+    public List<Allergies> userInput(String UserGuess);
+
 }

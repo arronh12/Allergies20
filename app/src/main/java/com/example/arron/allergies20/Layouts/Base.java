@@ -8,29 +8,16 @@ import android.widget.Toast;
 
 import com.example.arron.allergies20.Data.DAOaccess;
 import com.example.arron.allergies20.Main.mainApp;
+import com.example.arron.allergies20.Models.Allergies;
 import com.example.arron.allergies20.R;
+
+import java.util.List;
 
 public class Base extends AppCompatActivity {
 
     public mainApp mainAppObject;
     public static DAOaccess dbAccess;
+    public static List<Allergies> foods;
 
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId())
-        {
-            case R.id.menu_add:
-                Toast.makeText(this, "add foods", Toast.LENGTH_SHORT).show();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflator = getMenuInflater();
-        inflator.inflate(R.menu.food_menu, menu);
-        return true;
-    }
 }

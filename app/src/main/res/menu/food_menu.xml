@@ -11,7 +11,7 @@
         android:title="@string/addfoods"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/menu_viewfoods"
+        android:id="@+id/menu_view_foods"
         android:orderInCategory="100"
         android:title="@string/view_foods"
         app:showAsAction="never"/>

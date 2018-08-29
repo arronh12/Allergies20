@@ -218,7 +218,7 @@ public class Add extends Base {
                 Toast.makeText(this, "add foods", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Add.this,Add.class));
                 break;
-            case R.id.menu_viewfoods:
+            case R.id.menu_view_foods:
                 startActivity(new Intent(Add.this,ViewFoods.class));
         }
         return super.onOptionsItemSelected(item);
@@ -254,7 +254,7 @@ public class Add extends Base {
 
         Allergies allergy = new Allergies(foodNameOut,foodTypeOut,allergiesTypeOut,infoOut,riskPickerOut);
 
-        allergy.setFoodName(foodNameOut);
+        allergy.setFoodName(foodNameOut.trim().toLowerCase());
         allergy.setFoodType(foodTypeOut);
         allergy.setAllergyType(allergiesTypeOut);
         allergy.setFoodInfo(infoOut);

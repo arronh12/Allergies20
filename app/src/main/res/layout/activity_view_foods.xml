@@ -4,14 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Activities.ViewFoods"
+    tools:showIn="@layout/">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:visibility="visible" />
 
     <ListView
         android:id="@+id/viewFoodsList"
         android:layout_width="match_parent"
-        android:layout_height="556dp"
+        android:layout_height="420dp"
         android:layout_marginLeft="50sp"
         android:layout_marginRight="50sp"
+        android:layout_marginTop="8dp"
         android:dividerHeight="5dp"
         android:scrollingCache="true"
         android:smoothScrollbar="true"
@@ -19,8 +31,49 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchBox">
 
     </ListView>
+
+    <TextView
+        android:id="@+id/viewLabel"
+        style="@style/LogoDesign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="View Foods"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/searchBox"
+        style="@style/inputBoxes"
+        android:layout_width="313dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="52dp"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewLabel" />
+
+    <Button
+        android:id="@+id/resetList"
+        style="@style/AppTheme.Button"
+        android:layout_width="64dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Reset"
+        android:onClick="startList"
+        android:textColor="@color/red_text"
+        app:layout_constraintBottom_toTopOf="@+id/searchBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
