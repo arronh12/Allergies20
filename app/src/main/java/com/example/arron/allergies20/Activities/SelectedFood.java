@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +18,9 @@ import static com.example.arron.allergies20.R.menu.food_menu;
 
 public class SelectedFood extends Base {
 
-    private TextView foodName, foodType;
+    private TextView foodName, foodType, allergyType, selectedNum,infoSelected;
+    private ProgressBar selectedBar;
+    int foodNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +30,29 @@ public class SelectedFood extends Base {
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
-        int foodNum = intent.getIntExtra("position", 0);
+        foodNum = intent.getIntExtra("position", 0);
 
         Toast.makeText(this,foods.get(foodNum).getFoodName(),Toast.LENGTH_SHORT).show();
 
         foodName = (TextView)findViewById(R.id.foodNameSelected);
         foodName.setText(foods.get(foodNum).getFoodName());
+
+        foodType = (TextView)findViewById(R.id.foodtypeselected);
+        foodType.setText(foods.get(foodNum).getFoodType());
+
+        allergyType = (TextView)findViewById(R.id.allergytypeselected);
+        allergyType.setText(foods.get(foodNum).getAllergyType());
+
+        selectedBar = (ProgressBar)findViewById(R.id.progressBarselected);
+        selectedBar.setProgress(foods.get(foodNum).getFoodRiskPicker() * 20);
+        selectedNum = (TextView)findViewById(R.id.selectedNum);
+        int NumIn = foods.get(foodNum).getFoodRiskPicker();
+        selectedNum.setText(Integer.toString(NumIn));
+
+        infoSelected = (TextView)findViewById(R.id.infoSelected);
+        infoSelected.setText(foods.get(foodNum).getFoodInfo());
+
+
     }
 
     @Override
@@ -53,5 +74,19 @@ public class SelectedFood extends Base {
                 startActivity(new Intent(SelectedFood.this,ViewFoods.class));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void deleteFood(View v){
+        dbAccess.deleteFood(foods.get(foodNum));
+        startActivity(new Intent(SelectedFood.this,ViewFoods.class));
+        Toast.makeText(this,"Food Deleted...",Toast.LENGTH_SHORT).show();
+
+    }
+
+    public void update(View v){
+        Intent intent = new Intent(SelectedFood.this, UpdateFood.class);
+        intent.putExtra("foodNUm", foodNum);
+        startActivity(intent);
+        Toast.makeText(this,"Please select Option...",Toast.LENGTH_SHORT).show();
     }
 }

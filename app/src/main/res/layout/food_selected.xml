@@ -51,12 +51,131 @@
                 android:text="Food Type:" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/foodtypeselected"
                 style="@style/selectionBoxs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="122dp" >
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/foodLabels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Allergy Type:    " />
+
+            <TextView
+                android:id="@+id/allergytypeselected"
+                style="@style/selectionBoxs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="149dp" >
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/foodLabels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAlignment="viewStart"
+                tools:text="Risk Level: " />
+
+            <ProgressBar
+                android:id="@+id/progressBarselected"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="196dp"
+                android:layout_height="92dp" />
+
+            <TextView
+                android:id="@+id/selectedNum"
+                style="@style/selectionBoxs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView6"
+                style="@style/foodLabels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food Information" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="269dp" >
+
+            <TextView
+                android:id="@+id/infoSelected"
+                style="@style/selectionBoxs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Deletebutton"
+                    style="@style/AppTheme.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="deleteFood"
+                    android:text="Delete"
+                    android:textColor="@color/red_text" />
+
+                <Button
+                    android:id="@+id/UpdateButton"
+                    style="@style/AppTheme.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="update"
+                    android:text="Update"
+                    android:textColor="@color/red_text" />
+            </LinearLayout>
         </TableRow>
 
     </TableLayout>
+
 </android.support.constraint.ConstraintLayout>

@@ -259,7 +259,7 @@ public class Add extends Base {
         allergy.setAllergyType(allergiesTypeOut);
         allergy.setFoodInfo(infoOut);
         allergy.setFoodRiskPicker(riskPickerOut);
-        allergy.setFid(foodsListData.size()+1);
+        allergy.setFid(foodsListData.size());
         dbAccess.addFoodLists(allergy);
 
 

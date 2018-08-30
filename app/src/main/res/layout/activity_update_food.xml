@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/LogoDesign"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Update Food" />
+
+        <Button
+            android:id="@+id/button"
+            style="@style/updateButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="foodNameUpdate"
+            android:text="Food Name" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/updateButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Food Type" />
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/updateButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Allergy Type" />
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/updateButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Risk Amount" />
+
+        <Button
+            style="@style/updateButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Food Information" />
+
+        <TextView
+            android:id="@+id/updateChoiceLabel"
+            style="@style/foodLabels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textStyle="bold|italic"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/updateCoiceInput"
+            style="@style/inputBoxes"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="55dp"
+            android:contentDescription="input change"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/updateGoButton"
+            style="@style/updateButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="upDatefoods"
+            android:text="Update"
+            android:textColor="@color/red_text"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

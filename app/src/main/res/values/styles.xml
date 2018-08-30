@@ -52,4 +52,14 @@
         <item name="android:textColor">#FFF</item>
     </style>
 
+    <style name="updateButtons">
+        <item name="android:textColor">#c90906</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:background">@drawable/button_border</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

@@ -4,6 +4,7 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
 
 import com.example.arron.allergies20.Models.Allergies;
 
@@ -22,5 +23,8 @@ public interface DAOaccess {
 
     @Query("SELECT * FROM food_table WHERE food_name like :UserGuess")
     public List<Allergies> userInput(String UserGuess);
+
+    @Update()
+    public void updateFood(Allergies...allergies);
 
 }
