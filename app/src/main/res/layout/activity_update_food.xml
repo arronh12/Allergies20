@@ -3,12 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="37dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/textView2"
@@ -31,6 +42,7 @@
             style="@style/updateButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="foodTypeUpdate"
             android:text="Food Type" />
 
         <Button
@@ -38,6 +50,7 @@
             style="@style/updateButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="allergyTypeUpdate"
             android:text="Allergy Type" />
 
         <Button
@@ -45,12 +58,14 @@
             style="@style/updateButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="riskUpdateUpdate"
             android:text="Risk Amount" />
 
         <Button
             style="@style/updateButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="foodInfoUpdate"
             android:text="Food Information" />
 
         <TextView
@@ -77,6 +92,82 @@
             android:textAlignment="center"
             android:visibility="gone" />
 
+        <Spinner
+            android:id="@+id/foodTypeSpinner"
+            android:layout_width="252dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="77dp"
+            android:background="@color/White"
+            android:entries="@array/foods"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/allergyBoxSelected"
+            android:layout_width="339dp"
+            android:layout_height="63dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AllergysTypeLabel">
+
+            <RadioGroup
+
+                android:id="@+id/allergyG"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:background="@color/text_shadow"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/GradioB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Gluten"
+                    android:textColor="@color/red_text" />
+
+                <RadioButton
+                    android:id="@+id/DradioB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dairy"
+                    android:textColor="@color/red_text"
+                    tools:layout_editor_absoluteX="269dp"
+                    tools:layout_editor_absoluteY="286dp" />
+
+                <RadioButton
+                    android:id="@+id/PradioB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Penuts"
+                    android:textColor="@color/red_text" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <NumberPicker
+            android:id="@+id/riskPickerView"
+            style="@style/inputBoxes"
+            android:layout_width="43dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="10dp"
+            android:soundEffectsEnabled="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/infoText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintStart_toEndOf="@+id/riskLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/multiBox"
+            app:layout_constraintVertical_bias="0.19999999" />
+
         <Button
             android:id="@+id/updateGoButton"
             style="@style/updateButtons"
@@ -86,6 +177,7 @@
             android:text="Update"
             android:textColor="@color/red_text"
             android:visibility="gone" />
+
 
     </LinearLayout>
 

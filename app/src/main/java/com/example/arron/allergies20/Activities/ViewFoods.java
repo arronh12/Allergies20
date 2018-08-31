@@ -78,7 +78,8 @@ public class ViewFoods extends Base {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(food_menu, menu);
+        MenuInflater inflator = getMenuInflater();
+        inflator.inflate(R.menu.food_menu, menu);
         return true;
     }
 
@@ -88,11 +89,16 @@ public class ViewFoods extends Base {
         switch (item.getItemId())
         {
             case R.id.menu_add:
-                Toast.makeText(this, "add", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "add foods", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(ViewFoods.this,Add.class));
                 break;
             case R.id.menu_view_foods:
                 startActivity(new Intent(ViewFoods.this,ViewFoods.class));
+                break;
+            case R.id.menu_deleteAll:
+                dbAccess.deleteAllfoodas();
+                foods = dbAccess.getFoods();
+                Toast.makeText(this,"All foods deleted form database...",Toast.LENGTH_LONG).show();
         }
         return super.onOptionsItemSelected(item);
     }

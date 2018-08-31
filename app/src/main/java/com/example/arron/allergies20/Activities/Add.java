@@ -220,6 +220,11 @@ public class Add extends Base {
                 break;
             case R.id.menu_view_foods:
                 startActivity(new Intent(Add.this,ViewFoods.class));
+                break;
+            case R.id.menu_deleteAll:
+                dbAccess.deleteAllfoodas();
+                foods = dbAccess.getFoods();
+                Toast.makeText(this,"All foods deleted form database...",Toast.LENGTH_LONG).show();
         }
         return super.onOptionsItemSelected(item);
     }

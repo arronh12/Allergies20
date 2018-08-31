@@ -81,7 +81,7 @@
             tools:text="Allergy Type" />
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/allergyBoxSelected"
             android:layout_width="339dp"
             android:layout_height="63dp"
             android:layout_marginEnd="8dp"
@@ -135,7 +135,7 @@
             android:layout_marginEnd="24dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            app:layout_constraintTop_toBottomOf="@+id/allergyBoxSelected">
         </android.support.v7.widget.LinearLayoutCompat>
 
 
@@ -199,7 +199,7 @@
             android:layout_marginTop="140dp"
             android:text="Risk Level"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/allergyBoxSelected" />
 
         <NumberPicker
             android:id="@+id/riskPicker"

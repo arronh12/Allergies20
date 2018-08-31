@@ -18,11 +18,15 @@ public interface DAOaccess {
     @Delete
     void deleteFood(Allergies...allergies);
 
+    @Query("DELETE  FROM food_table")
+    void deleteAllfoodas();
+
     @Query("SELECT * FROM food_table")
     List<Allergies> getFoods();
 
     @Query("SELECT * FROM food_table WHERE food_name like :UserGuess")
     public List<Allergies> userInput(String UserGuess);
+
 
     @Update()
     public void updateFood(Allergies...allergies);
